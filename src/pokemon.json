@@ -1,82 +1,92 @@
 [
     {
         "id": 1,
-        "image": "../public/images/aerodactyl.png",
+        "name" : "aerodactyl",
+        "image": "./images/aerodactyl.png",
         "cicked": false
     },
     {
         "id": 2,
-        "image": "../public/images/arcanine.png",
+        "name" : "arcanine",
+        "image": "./images/arcanine.png",
         "cicked": false
     },
     {
         "id": 3,
-        "image": "../public/images/blastoise.png",
+        "name" : "blastoise",
+        "image": "./images/blastoise.png",
         "cicked": false
     },
     {
         "id": 4,
-        "image": "../public/images/charizard.png",
+        "name" : "charizard",
+        "image": "./images/charizard.png",
         "cicked": false
     },
     {
         "id": 5,
-        "image": "../public/images/dragonite.png",
+        "name" : "dragonite",
+        "image": "./images/dragonite.png",
         "cicked": false
     },
     {
         "id": 6,
-        "image": "../public/images/gengar.png",
+        "name" : "gengar",
+        "image": "./images/gengar.png",
         "cicked": false
     },
     {
         "id": 7,
-        "image": "../public/images/golduck.png",
+        "name" : "golduck",
+        "image": "./images/golduck.png",
         "cicked": false
     },
     {
         "id": 8,
-        "image": "../public/images/gyarados.png",
+        "name" : "gyarados",
+        "image": "./images/gyarados.png",
         "cicked": false
     },
     {
         "id": 9,
-        "image": "../public/images/kabutops.png",
+        "name" : "kabutops",
+        "image": "./images/kabutops.png",
         "cicked": false
     },
     {
         "id": 10,
-        "image": "../public/images/lapras.png",
+        "name" : "lapras",
+        "image": "./images/lapras.png",
         "cicked": false
     },
     {
         "id": 11,
-        "image": "../public/images/magneton.png",
+        "name" : "magneton",
+        "image": "./images/magneton.png",
         "cicked": false
     },
     {
         "id": 12,
-        "image": "../public/images/mew.png",
+        "name" : "mew",
+        "image": "./images/mew.png",
         "cicked": false
     },
     {
         "id": 13,
-        "image": "../public/images/ninetails.png",
+        "name" : "ninetails",
+        "image": "./images/ninetails.png",
         "cicked": false
     },
     {
         "id": 14,
-        "image": "../public/images/onyx.png",
+        "name" : "onyx",
+        "image": "./images/onyx.png",
         "cicked": false
     },
     {
         "id": 15,
-        "image": "../public/images/pidgeot.png",
-        "cicked": false
-    },
-    {
-        "id": 16,
-        "image": "../public/images/pikachu.png",
+        "name" : "pidgeot",
+        "image": "./images/pidgeot.png",
         "cicked": false
     }
 ]
