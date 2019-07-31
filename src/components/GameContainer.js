@@ -35,6 +35,10 @@ class GameContainer extends Component {
             //score resets
     //
 
+    handleClick(id) {
+        console.log(id);
+    }
+
     render() {
         return (
             <div>
@@ -53,6 +57,7 @@ class GameContainer extends Component {
                                     id={pokemon.id}
                                     name={pokemon.name}
                                     image={pokemon.image}
+                                    handleClick={this.handleClick}
                                 />
                             ))}
                         </GameCol>
