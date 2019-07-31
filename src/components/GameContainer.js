@@ -35,6 +35,11 @@ class GameContainer extends Component {
     //score resets
     //
 
+    handleShuffle = () => {
+        let shuffledPokemon = shuffle(pokemon);
+        this.setState({ pokemon: shuffledPokemon });
+      };
+
     handleClick = id => {
         console.log(id);
         if (this.state.clicked.indexOf(id) === -1) {
@@ -56,15 +61,24 @@ class GameContainer extends Component {
         if (this.state.clicked.length === pokemon.length) {
             console.log("You win!");
             let currentWins = this.state.wins;
-            this.setState({ wins: currentWins + 1 });
+            this.setState({ 
+                wins: currentWins + 1,
+                message: "You Win!" 
+            });
             //   this.handleReset();
         } else {
             let currentScore = this.state.score;
-            this.setState({ score: currentScore + 1 }, function () {
+            this.setState({ 
+                score: currentScore + 1,
+                message: "Great Choice!" 
+            }, function () {
                 console.log("Score: " + this.state.score);
             });
         }
-    }
+        this.handleShuffle();
+    };
+
+    
 
     render() {
         return (
@@ -79,6 +93,7 @@ class GameContainer extends Component {
                     <Row>
                         <Col size="10" id="titleCol">
                             <h3 className="text-center">Don't click the same card twice and you win!</h3>
+                            <h3 className="text-center"> { this.state.message } </h3>
                         </Col>
                     </Row>
                     <Row>
