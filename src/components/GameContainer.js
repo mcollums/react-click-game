@@ -7,10 +7,33 @@ import GameCol from "./GameCol";
 import Header from "./Header";
 import pokemon from "../pokemon.json"
 
+function shuffle(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+      let j = Math.floor(Math.random() * (i + 1));
+      [array[i], array[j]] = [array[j], array[i]];
+    }
+    return array;
+  }
+
 class GameContainer extends Component {
     state = {
-        pokemon
+        pokemon,
+        score: 0,
+        wins: 0,
+        losses: 0,
+        clicked: [],
+        message: ""
     };
+
+    //method that shuffles tiles
+    //method that handles click
+        //if pokemon is not in the clicked array...
+            //add it to the click array
+            //increase score by one
+        //if pokemon is in the clicked array...
+            //increase losses by one
+            //score resets
+    //
 
     render() {
         return (
