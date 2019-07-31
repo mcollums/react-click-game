@@ -99,8 +99,8 @@ class GameContainer extends Component {
                 <Container fluid="-fluid">
                     <Row>
                         <Col size="10" id="titleCol">
-                            <h3 className="text-center">Don't click the same card twice and you win!</h3>
-                            <h3 className="text-center"> {this.state.message} </h3>
+                            <h5 className="text-center">Don't click the same card twice and you win!</h5>
+                            <h5 className="text-center"> {this.state.message} </h5>
                         </Col>
                     </Row>
                     <Row>
