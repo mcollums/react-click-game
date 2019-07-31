@@ -69,7 +69,12 @@ class GameContainer extends Component {
     render() {
         return (
             <div>
-                <Header />
+                <Header 
+                    score={this.state.score}
+                    wins={this.state.wins}
+                    losses={this.state.losses}
+                    message={this.state.message}
+                />
                 <Container fluid="-fluid">
                     <Row>
                         <Col size="10" id="titleCol">
