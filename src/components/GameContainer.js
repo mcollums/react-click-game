@@ -9,11 +9,11 @@ import pokemon from "../pokemon.json"
 
 function shuffle(array) {
     for (let i = array.length - 1; i > 0; i--) {
-      let j = Math.floor(Math.random() * (i + 1));
-      [array[i], array[j]] = [array[j], array[i]];
+        let j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
     }
     return array;
-  }
+}
 
 class GameContainer extends Component {
     state = {
@@ -27,16 +27,43 @@ class GameContainer extends Component {
 
     //method that shuffles tiles
     //method that handles click
-        //if pokemon is not in the clicked array...
-            //add it to the click array
-            //increase score by one
-        //if pokemon is in the clicked array...
-            //increase losses by one
-            //score resets
+    //if pokemon is not in the clicked array...
+    //add it to the click array
+    //increase score by one
+    //if pokemon is in the clicked array...
+    //increase losses by one
+    //score resets
     //
 
-    handleClick(id) {
+    handleClick = id => {
         console.log(id);
+        if (this.state.clicked.indexOf(id) === -1) {
+            this.setState({ clicked: this.state.clicked.concat(id) }, function () {
+                console.log("Added to array " + this.state.clicked);
+                this.handleIncrement();
+            });
+        } else {
+            console.log("Already in the array " + this.state.clicked);
+            let currentLosses = this.state.losses;
+            this.setState({ losses: currentLosses + 1 })
+            console.log("Score: " + this.state.losses);
+
+            //   this.handleReset();
+        }
+    };
+
+    handleIncrement = () => {
+        if (this.state.clicked.length === pokemon.length) {
+            console.log("You win!");
+            let currentWins = this.state.wins;
+            this.setState({ wins: currentWins + 1 });
+            //   this.handleReset();
+        } else {
+            let currentScore = this.state.score;
+            this.setState({ score: currentScore + 1 }, function () {
+                console.log("Score: " + this.state.score);
+            });
+        }
     }
 
     render() {
