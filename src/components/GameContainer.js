@@ -38,7 +38,7 @@ class GameContainer extends Component {
     handleShuffle = () => {
         let shuffledPokemon = shuffle(pokemon);
         this.setState({ pokemon: shuffledPokemon });
-      };
+    };
 
     handleClick = id => {
         console.log(id);
@@ -52,8 +52,7 @@ class GameContainer extends Component {
             let currentLosses = this.state.losses;
             this.setState({ losses: currentLosses + 1 })
             console.log("Score: " + this.state.losses);
-
-            //   this.handleReset();
+            this.handleReset();
         }
     };
 
@@ -61,16 +60,16 @@ class GameContainer extends Component {
         if (this.state.clicked.length === pokemon.length) {
             console.log("You win!");
             let currentWins = this.state.wins;
-            this.setState({ 
+            this.setState({
                 wins: currentWins + 1,
-                message: "You Win!" 
+                message: "You Win!"
             });
-            //   this.handleReset();
+            this.handleReset();
         } else {
             let currentScore = this.state.score;
-            this.setState({ 
+            this.setState({
                 score: currentScore + 1,
-                message: "Great Choice!" 
+                message: "Great Choice!"
             }, function () {
                 console.log("Score: " + this.state.score);
             });
@@ -78,12 +77,20 @@ class GameContainer extends Component {
         this.handleShuffle();
     };
 
-    
+    handleReset = () => {
+        this.setState({
+            score: 0,
+            message: "You Lose. Sad Sad Day.",
+            clicked: []
+        });
+        this.handleShuffle();
+    };
+
 
     render() {
         return (
             <div>
-                <Header 
+                <Header
                     score={this.state.score}
                     wins={this.state.wins}
                     losses={this.state.losses}
@@ -93,7 +100,7 @@ class GameContainer extends Component {
                     <Row>
                         <Col size="10" id="titleCol">
                             <h3 className="text-center">Don't click the same card twice and you win!</h3>
-                            <h3 className="text-center"> { this.state.message } </h3>
+                            <h3 className="text-center"> {this.state.message} </h3>
                         </Col>
                     </Row>
                     <Row>
