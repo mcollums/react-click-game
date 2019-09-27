@@ -1,6 +1,6 @@
 # Clicky Game: Pokemon Edition
 
-#Rules
+## Rules
 - Try to raise your score by clicking on each character square.
 - Be careful, click on a square twice and you lose.
 - Get all 16 tiles and you win!
